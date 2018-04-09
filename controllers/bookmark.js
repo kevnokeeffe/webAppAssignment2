@@ -29,7 +29,7 @@ const bookmark = {
       website: request.body.website,
       webaddress: request.body.webaddress,
     };
-    bookmarkStore.addweb(bookmarkId, newWeb);
+    bookmarkStore.addWeb(bookmarkId, newWeb);
     response.redirect('/bookmark/' + bookmarkId);
   },
   
