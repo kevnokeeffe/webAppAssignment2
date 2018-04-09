@@ -1,0 +1,199 @@
+body {
+  background-image: url("https://cdn.glitch.com/2e7e195f-8aeb-4aa6-9de5-9981c0a9cf45%2FBeautiful-Pixel-Heart-Wallpaper-HD.jpg?1520598941048");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ui.table thead th{
+  background-color:lightblue;
+  color:white;
+}
+
+.imgholder img{
+  float:right;
+  margin-top:5px;
+  
+  
+}
+.imgholder{
+position:absolute;
+  display:inline-block;
+  right:0;
+  top:0;
+}
+
+.ui.stacked.segment{
+ position:relative; 
+}
+    
+.name{
+  padding-top:20px;
+  padding-right:5px;
+  line-height:20px;
+  font-weight:bold;
+}
+
+.clearfix{
+  overflow: auto;
+}
+.clearfix::after{
+ display:table;
+  clear:both;
+  content:"";
+}
+
+.ui.header{
+ display:inline-block; 
+}
+
+.ireland.flag{
+  float:left;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+  background-color:white;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+}
+
+button:hover, a:hover {
+    opacity: 0.7;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+}
+
+.container:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/*==============================================================================*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.8; 
+    cursor: pointer; 
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container */
+.container {
+    position: relative;
+    display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.image1{
+  animation:slides 2s ease-in;
+}
+@keyframes slides{
+ 0%{
+   opacity:0;
+   transform:translateY(200px);   
+   
+  }100%{opacity:1;
+   transform:translateY(0);
+  }
+  }
