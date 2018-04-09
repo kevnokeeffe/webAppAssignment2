@@ -1,20 +1,23 @@
 'use strict';
-
+const accounts = require ('./accounts.js');
 const logger = require('../utils/logger');
 const bookmarkStore = require('../models/bookmark-store');
 const uuid = require('uuid');
 
 const bookmark = {
-  index(request, response) {
+   index(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request);  
     const bookmarkId = request.params.id;
-    //const webId = request.params.webid;
-    //logger.debug('Deleting Website ${webId} from Bookmark ${bookmarkId}');
-    logger.debug('Bookmark id= ',bookmarkId);
+    logger.debug('Bookmark id = ', bookmarkId);
+    if (loggedInUser) {
     const viewData = {
       title: 'Bookmark',
       bookmark: bookmarkStore.getBookmark(bookmarkId),
+      fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
     };
     response.render('bookmark', viewData);
+    }
+    else response.redirect('/');
   },
   
   
@@ -26,7 +29,7 @@ const bookmark = {
       website: request.body.website,
       webaddress: request.body.webaddress,
     };
-    bookmarkStore.addweb(bookmarkId, newWeb);
+    bookmarkStore.addWeb(bookmarkId, newWeb);
     response.redirect('/bookmark/' + bookmarkId);
   },
   
