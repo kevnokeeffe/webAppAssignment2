@@ -20,10 +20,6 @@ const dashboard = {
     }
     else response.redirect('/');
   },
-    
-    
-    
-  
   
   removeBookmark(request, response) {
     const bookmarkId = request.params.id;
