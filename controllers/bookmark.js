@@ -1,5 +1,5 @@
 'use strict';
-
+const accounts = require ('./accounts.js');
 const logger = require('../utils/logger');
 const bookmarkStore = require('../models/bookmark-store');
 const uuid = require('uuid');

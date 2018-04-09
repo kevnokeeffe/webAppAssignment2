@@ -12,7 +12,7 @@ const dashboard = {
     if (loggedInUser) {
     const viewData = {
       title: 'Bookmark Dashboard',
-      bookmarks: bookmarkStore.getUserBookmarks(loggedInUser.id),
+      bookmark: bookmarkStore.getUserBookmarks(loggedInUser.id),
       fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
     };
     logger.info('about to render', bookmarkStore.getAllBookmarks());
