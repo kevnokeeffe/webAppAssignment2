@@ -1,0 +1,35 @@
+  <table class="ui table">
+  
+    <thead>
+    <tr>
+    <th>
+      Website
+      </th>
+    <th>
+      Web Address
+      </th>
+      <th></th>
+      </tr>
+    </thead>
+    
+  <tbody>
+    {{#each bookmark.websites}}
+      <tr>
+        <td>
+          {{website}}
+        </td>
+        <td>
+         <a href="{{webaddress}}" target = "_blank">{{website}}</a>
+        </td>
+        <td>
+         
+          
+          <a href="/bookmark/{{../bookmark.id}}/deleteWeb/{{id}}" class="delweb ui icon button red">
+  <i class="large trash icon"></i>
+</a>
+        </td>
+    
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
