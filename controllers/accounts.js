@@ -36,17 +36,19 @@ const accounts = {
     const user = request.body;
     user.id = uuid();
     userstore.addUser(user);
+    
     logger.info(`registering ${user.email}`);
     response.redirect('/');
   },
 
   authenticate(request, response) {
     const user = userstore.getUserByEmail(request.body.email);
+    //const password = userstore.getUserByPassword(request.body.password);
     if (user) {
-      response.cookie('bookmark', user.email);
+      response.cookie('bookmark', user.email, user.password);
       logger.info(`logging in ${user.email}`);
-      response.cookie('bookmark', user.password);
-      logger.info(`logging in ${user.password}`);
+      //response.cookie('bookmark', password.password);
+      //logger.info(`logging in ${password.password}`);
       response.redirect('/dashboard');
     } else {
       response.redirect('/login');
