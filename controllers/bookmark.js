@@ -28,6 +28,7 @@ const bookmark = {
       id: uuid(),
       website: request.body.website,
       webaddress: request.body.webaddress,
+      //genre: request.body.genre,
     };
     bookmarkStore.addWeb(bookmarkId, newWeb);
     response.redirect('/bookmark/' + bookmarkId);

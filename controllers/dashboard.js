@@ -5,6 +5,9 @@ const bookmarkStore = require('../models/bookmark-store');
 const uuid = require('uuid');
 
 
+const pictureStore = require('../models/picture-store.js');
+
+
 const dashboard = {
   index(request, response) {
     logger.info('dashboard rendering');
@@ -14,11 +17,21 @@ const dashboard = {
       title: 'Bookmark Dashboard',
       bookmark: bookmarkStore.getUserBookmarks(loggedInUser.id),
       fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
+      title: 'PictureStore Dashboard',
+      user: loggedInUser,
+      album: pictureStore.getAlbum(loggedInUser.id),
     };
     logger.info('about to render', bookmarkStore.getAllBookmarks());
     response.render('dashboard', viewData);
     }
     else response.redirect('/');
+  },
+  
+  uploadPicture(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request);
+    pictureStore.addPicture(loggedInUser.id, request.body.title, request.files.picture, function () {
+      response.redirect('/dashboard');
+    });
   },
   
   removeBookmark(request, response) {
@@ -40,6 +53,8 @@ const dashboard = {
     bookmarkStore.addBookmark(newBookmark);
     response.redirect('/dashboard');
   },
+  
+   
 };
 
 
