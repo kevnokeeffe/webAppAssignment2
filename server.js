@@ -4,9 +4,8 @@ const express = require('express');
 const logger = require('./utils/logger');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const fileUpload = require('express-fileupload');
+
 const app = express();
-app.use(fileUpload());
 app.use(cookieParser());
 const exphbs = require('express-handlebars');
 app.use(bodyParser.urlencoded({ extended: false, }));
@@ -20,6 +19,6 @@ app.set('view engine', '.hbs');
 const routes = require('./routes');
 app.use('/', routes);
 
-const listener = app.listen(process.env.PORT||4000, function () {
+const listener = app.listen(process.env.PORT|| 4000, function () {
   logger.info(`glitch-bookmark started on port ${listener.address().port}`);
 });

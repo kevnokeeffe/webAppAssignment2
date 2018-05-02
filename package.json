@@ -15,10 +15,7 @@
     "lodash": "^4.17.5",
     "lowdb": "^0.14.0",
     "uuid": "^3.2.1",
-    "express-fileupload": "^0.1.2",
-   "cloudinary": "^1.8.0",
     "winston": "^2.4.0"
-    
   },
   "engines": {
     "node": "6.9.1"
@@ -31,5 +28,4 @@
     "gomix",
     "express"
   ]
-  
 }
